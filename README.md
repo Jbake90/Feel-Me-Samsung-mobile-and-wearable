@@ -100,4 +100,15 @@ Follow these steps once you have a GitHub account. Replace the placeholder value
    After the first push, you can simply run `git push` for future commits.
 5. **(Optional) Create pull requests.** If you develop on feature branches, push the branch and open a PR in the GitHub UI to merge it into your main branch.
 
+### Quick push helper (optional)
+If you prefer a single command to wire the remote and push, you can use the included helper script from the repository root:
+
+```bash
+./scripts/push_to_github.sh https://github.com/<your-username>/<your-repo>.git [branch]
+```
+
+- If you omit `[branch]`, it pushes whichever branch you are currently on (for example `work` or `main`).
+- The script sets or updates the `origin` remote to the URL you provide, then runs `git push -u origin <branch>`.
+- If Git is not installed or your credentials are not configured, the script will fail with an error from `git push`; you can run `git config user.name` and `git config user.email` to set your identity before pushing.
+
 You can now open the GitHub repository page to confirm the code is there, then clone it elsewhere or connect Android Studio directly to that repo.
