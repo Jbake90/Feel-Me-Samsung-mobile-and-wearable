@@ -75,3 +75,29 @@ If you prefer a step-by-step walkthrough of the Android Studio steps, see `andro
 
 ### Troubleshooting build errors
 - **"Android SDK location not found"** — This means Gradle cannot see the SDK. Open the project in **Android Studio** and install the Android SDK (API 34+) when prompted. Studio will auto-create `android/local.properties` with a `sdk.dir=/path/to/Android/sdk` entry. If you are building from the terminal, create that file yourself or set `ANDROID_HOME`/`ANDROID_SDK_ROOT` to point at your SDK install.
+
+## How to push this code to your GitHub
+Follow these steps once you have a GitHub account. Replace the placeholder values with your own names and URLs.
+
+1. **Create an empty repo on GitHub.** In the GitHub UI, click **New repository**, give it a name (for example `feel-me`), and leave it empty (no README or license).
+2. **Check your current branch.** From this folder run:
+   ```bash
+   git status -sb
+   ```
+   If you see changes you want to keep, stage them with `git add <file>` and commit with `git commit -m "Your message"`.
+3. **Point the repo at your GitHub remote.** Replace the URL with the one GitHub shows after you create the repository:
+   ```bash
+   git remote add origin https://github.com/<your-username>/<your-repo>.git
+   ```
+   If `origin` already exists, update it instead:
+   ```bash
+   git remote set-url origin https://github.com/<your-username>/<your-repo>.git
+   ```
+4. **Push the code.** Push the current branch (for example `main` or `work`) to GitHub:
+   ```bash
+   git push -u origin <branch-name>
+   ```
+   After the first push, you can simply run `git push` for future commits.
+5. **(Optional) Create pull requests.** If you develop on feature branches, push the branch and open a PR in the GitHub UI to merge it into your main branch.
+
+You can now open the GitHub repository page to confirm the code is there, then clone it elsewhere or connect Android Studio directly to that repo.
