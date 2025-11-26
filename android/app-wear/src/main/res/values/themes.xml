@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.FeelMe.Wear" parent="Theme.Wear.Material3.DayNight">
+        <!-- Customize colors if desired -->
+    </style>
+</resources>
